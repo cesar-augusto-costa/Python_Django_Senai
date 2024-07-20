@@ -36,6 +36,8 @@
             <div class="btn-group" role="group" aria-label="Basic mixed styles example">
               <button type="button" onclick="window.location.href='{% url 'todo_atualizar' pk=tarefa.pk %}'" class="btn btn-warning">Editar</button>
               &nbsp;
+              <button type="button" onclick="window.location.href='{% url 'todo_completar' pk=tarefa.pk %}'" class="btn btn-info">Finalizar Tarefa</button>
+              &nbsp;
               <button type="button" onclick="window.location.href='{% url 'todo_excluir' pk=tarefa.pk %}'" class="btn btn-danger">Excluir</button>
             </div>
           </td>

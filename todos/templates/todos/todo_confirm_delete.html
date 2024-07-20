@@ -1,0 +1,24 @@
+{% extends 'padrao.html' %}
+
+{% block titulo %}
+  Exclusão de Tarefa
+{% endblock %}
+
+{% block subtitulo %}
+  Exclusão de Tarefa
+{% endblock %}
+
+{% block navegacao %}
+  <a href="{% url 'todo_listar' %}" type="button" class="btn btn-success">Lista de Tarefa</a>
+{% endblock %}
+
+{% block conteudo %}
+  {% comment %}inicio do modal de confirmação de exclusão{% endcomment %}
+  <script>
+    window.addEventListener('load', (event) => {
+      // Exibir o modal ao carregar a página
+      $('#modalDeletar').modal('show')
+    })
+  </script>
+  {% comment %}fim do modal de confirmação de exclusão{% endcomment %}
+{% endblock %}

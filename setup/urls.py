@@ -19,7 +19,7 @@ from django.contrib import admin
 from django.urls import path, include
 
 # from todos.views import home, todoListar
-from todos.views import todoListarView, todoCriarView, todoAtualizarView, todoDeleteView  # Class Based Views
+from todos.views import todoListarView, todoCriarView, todoAtualizarView, todoDeletarView  # Class Based Views
 
 urlpatterns = [
     path("admin/", admin.site.urls),
@@ -28,7 +28,7 @@ urlpatterns = [
     path("", todoListarView.as_view(template_name="todos/todolistar.html"), name='todo_listar'),
     path("criar", todoCriarView.as_view(), name='todo_criar'),
     path("atualizar/<int:pk>", todoAtualizarView.as_view(), name='todo_atualizar'),
-    path("deletar/<int:pk>", todoDeleteView.as_view(), name='todo_excluir'),
+    path("deletar/<int:pk>", todoDeletarView.as_view(), name='todo_excluir'),
     path("__debug__/", include("debug_toolbar.urls")),
 ]
 

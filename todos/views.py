@@ -44,7 +44,7 @@ class todoAtualizarView(UpdateView):
         context['titulo_pagina'] = 'Atualizar Tarefa'
         return context
 
-class todoDeleteView(DeleteView):
+class todoDeletarView(DeleteView):
     model = Todo
     success_url = reverse_lazy('todo_listar')
-    template_name = "todos/todo_confirm_dele.html"
+    template_name = "todos/todo_confirm_delete.html"

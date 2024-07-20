@@ -1,0 +1,47 @@
+{% extends 'padrao.html' %}
+
+{% block titulo %}
+  Lista de Tarefas
+{% endblock %}
+
+{% block subtitulo %}
+  Listagem de Tarefas
+{% endblock %}
+
+{% block navegacao %}
+  <a href="{% url 'todo_criar' %}" type="button" class="btn btn-success">Nova Tarefa</a>
+{% endblock %}
+
+{% block conteudo %}
+  {% comment %}Inicio da tabela{% endcomment %}
+  <table class="table">
+    <thead>
+      <tr>
+        <th scope="col">ID</th>
+        <th scope="col">Título</th>
+        <th scope="col">Data da Criação</th>
+        <th scope="col">Data da Finalização</th>
+        <th scope="col">Opções</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for tarefa in todo_list %}
+        <tr>
+          <th scope="row">{{ tarefa.id }}</th>
+          <td>{{ tarefa.titulo }}</td>
+          <td>{{ tarefa.dtCriacao|date:'SHORT_DATE_FORMAT' }}</td>
+          <td>{{ tarefa.dtFinalizado|date:'SHORT_DATE_FORMAT'|default:'-' }}</td>
+          {% comment %}botoes de acoes{% endcomment %}
+          <td>
+            <div class="btn-group" role="group" aria-label="Basic mixed styles example">
+              <button type="button" onclick="window.location.href='{% url 'todo_atualizar' pk=tarefa.pk %}'" class="btn btn-warning">Editar</button>
+              &nbsp;
+              <button type="button" onclick="window.location.href='{% url 'todo_excluir' pk=tarefa.pk %}'" class="btn btn-danger">Excluir</button>
+            </div>
+          </td>
+        </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% comment %}fim da tabela{% endcomment %}
+{% endblock %}

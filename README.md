@@ -20,6 +20,7 @@ Framework de Python para renderização de páginas web.<br>
 ## **Como Contribuir Com o GIT**
 
 * [Guia de Principais Funções dos Comandos](markedown/principais_comandos_git.md)
+* [Resolver Problema de Credenciais no GitHub](markedown/erro_credenciais_git.md)
 
 ## Como utilizar o Projeto
 
